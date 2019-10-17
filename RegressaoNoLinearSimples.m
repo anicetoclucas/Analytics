@@ -129,7 +129,7 @@ head=evalin('base','head');
 referencia=head{1,indexVarOUT+1};
 str_principal=sprintf('\tModelos polinomiais quadráticas de regressão simples\n\nVariável resposta: %s\n\n',referencia);
 modelFunStr='@(b,x)b(1)*x.^2+b(2)*x+b(3)';
-for i=1:length(indexVarIN) %varia as colunas
+for i=1:length(indexVarIN) 
     noLinearModel=fitnlm(dado(:,indexVarIN(i)),dado(:,indexVarOUT),str2func(modelFunStr),rand(3,1));
     matriz_resp(i,1)={table2array(noLinearModel.Coefficients(1,1))};
     matriz_resp(i,2)={table2array(noLinearModel.Coefficients(2,1))};
@@ -145,7 +145,7 @@ for i=1:length(matriz_resp(:,4))
 end
 matriz_respNEW=matriz_resp(vetNaN,:);
 result_sorted=sortrows(matriz_respNEW,4);
-for i=length(indexVarIN):-1:1 %varia as colunas
+for i=length(indexVarIN):-1:1 
     str_principal=[str_principal sprintf('%s:\n',head{1,1+indexVarIN(i)})];
     str_principal=[str_principal sprintf('%f*x^2 + %f*x + %f\n\n',result_sorted{i,1},result_sorted{i,2},result_sorted{i,3})];     
     str_principal=[str_principal sprintf('R²: %f\n-------------------------------\n',result_sorted{i,4})];

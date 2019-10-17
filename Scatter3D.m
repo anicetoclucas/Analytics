@@ -188,7 +188,7 @@ rowY=strmatch(stringY(get(handles.popY,'value')),cellstr(head(1,2:end)));
 %--------Z
 stringZ=get(handles.popZ,'String');
 rowZ=strmatch(stringZ(get(handles.popZ,'value')),cellstr(head(1,2:end)));
-%--------Cor
+%--------Color
 vt_bom=evalin('base','bom');
 vt_ruim=evalin('base','ruim');
 vt_unido=zeros(length(vt_bom),3);

@@ -124,7 +124,7 @@ if erro ~=1
     end
     assignin('base','html',vetorcharCOL)
     set(handles.uitable1,'RowName',matrizcorr(:,1));
-    %Calculo das correlações e Cores
+    %Correlations calc and Colors
     Htable=findobj('Type','uitable');
     jscrollpane=findjobj(Htable);
     jtable=jscrollpane.getViewport.getView;
