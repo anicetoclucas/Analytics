@@ -138,7 +138,7 @@ try
         set(handles.figure1,'Pointer','watch')
         steps=3;
         step=1;
-        waitbar(step/steps)Tratamento
+        waitbar(step/steps)
         [dado,head]=xlsread(strcat(caminho,arq),selection);
         set(handles.uitable1,'Data',cellstr(''));
         evalin('base','clear matrizcorr matrizcorr_del bom ruim vt'); %Clear any remnant of last run
