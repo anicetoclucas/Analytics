@@ -1,35 +1,35 @@
-function varargout = Form(varargin)
-% FORM MATLAB code for Form.fig
-%      FORM, by itself, creates a new FORM or raises the existing
+function varargout = Analytics(varargin)
+% ANALYTICS MATLAB code for Analytics.fig
+%      ANALYTICS, by itself, creates a new ANALYTICS or raises the existing
 %      singleton*.
 %
-%      H =  FORM returns the handle to a new FORM or the handle to
+%      H =  ANALYTICS returns the handle to a new ANALYTICS or the handle to
 %      the existing singleton*.
 %
-%      FORM('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in FORM.M with the given input arguments.
+%      ANALYTICS('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in ANALYTICS.M with the given input arguments.
 %
-%      FORM('Property','Value',...) creates a new FORM or raises the
+%      ANALYTICS('Property','Value',...) creates a new ANALYTICS or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Form_OpeningFcn gets called.  An
+%      applied to the GUI before Analytics_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Form_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Analytics_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help Form
+% Edit the above text to modify the response to help Analytics
 
-% Last Modified by GUIDE v2.5 07-Jul-2017 12:48:36
+% Last Modified by GUIDE v2.5 15-Nov-2019 22:38:43
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
     'gui_Singleton',  gui_Singleton, ...
-    'gui_OpeningFcn', @Form_OpeningFcn, ...
-    'gui_OutputFcn',  @Form_OutputFcn, ...
+    'gui_OpeningFcn', @Analytics_OpeningFcn, ...
+    'gui_OutputFcn',  @Analytics_OutputFcn, ...
     'gui_LayoutFcn',  [] , ...
     'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -46,15 +46,15 @@ end
 % End initialization code - DO NOT EDIT
 
 
-%    --- Executes just before Form is made visible.
-function Form_OpeningFcn(hObject, eventdata, handles, varargin)
+%    --- Executes just before Analytics is made visible.
+function Analytics_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to Form (see VARARGIN)
+% varargin   command line arguments to Analytics (see VARARGIN)
 
-% Choose default command line output for Form
+% Choose default command line output for Analytics
 handles.output = hObject;
 
 % Find app directory
@@ -66,6 +66,12 @@ if isdeployed
 else
     currentDir='';
 end
+
+% Add paths in the PATH
+addpath(strcat(currentDir,'src\'));
+addpath(strcat(currentDir,'modules\'));
+
+
 % Define variables to software options
 st_options.removeOutliers=1;
 st_options.selectVar=0;
@@ -105,11 +111,11 @@ catch
     handles.btEstat.String='Estatística';
 end
 end
-% UIWAIT makes Form wait for user response (see UIRESUME)
+% UIWAIT makes Analytics wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 % --- Outputs from this function are returned to the command line.
-function varargout = Form_OutputFcn(hObject, eventdata, handles)
+function varargout = Analytics_OutputFcn(hObject, eventdata, handles)
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -598,7 +604,7 @@ function uitable1_CellEditCallback(hObject, eventdata, handles)
 %	Indices: row and column indices of the cell(s) edited
 %	PreviousData: previous data for the cell(s) edited
 %	EditData: string(s) entered by the user
-%	NewData: EditData or its converted form set on the Data property. Empty if Data was not changed
+%	NewData: EditData or its converted analytics set on the Data property. Empty if Data was not changed
 %	Error: error string when failed to convert EditData to appropriate value for Data
 % handles    structure with handles and user data (see GUIDATA)
 global dadoedit

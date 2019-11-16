@@ -20,3 +20,6 @@ A Matlab-based software basic statistical tools using GUIDE to contruct the grap
   * Simple
   * Multiple
 * Scatterplot 3D
+
+## Setup
+To run, execute `Form` for run "Form.m" file or run "Form.fig" on GUIDE.
