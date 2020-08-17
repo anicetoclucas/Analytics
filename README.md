@@ -1,5 +1,5 @@
 # Analytics
-A Matlab-based software basic statistical tools using GUIDE to contruct the graphycal interface.
+A Matlab-based software with basic statistical tools using GUIDE to contruct the graphycal interface.
 
 ![Main Screen](https://i.imgur.com/cUZ7Kon.gif)
 
